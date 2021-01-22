@@ -5,3 +5,22 @@ server:
 spring:
   application:
     name: hello
+
+
+
+  #activiti配置
+  #是否自动检查、部署流程定义文件
+  activiti:
+    check-process-definitions: true
+    #自动更新数据库结构（默认是），生产环境时设置为false，减少启动时间。
+    database-schema-update: true
+  #流程文件前缀和后缀（保存路径和文件名）
+  #spring.activiti.process-definition-location-prefix=classpath:/processes/
+  #spring.activiti.process-definition-location-suffixes=.bpmn20.xml,.bpmn
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://test-xc-dev.mysql.rds.aliyuncs.com:3331/code_generator?useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&autoReconnect=true&useSSL=false&allowMultiQueries=true
+    username: test_xc_dev
+    password: x!c@_d#ev$xcD_SdeAvM
+    tomcat:
+      initial-size: 4
